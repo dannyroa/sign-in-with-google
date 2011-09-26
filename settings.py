@@ -171,8 +171,11 @@ STATIC_DOC_ROOT = MEDIA_ROOT
 
 SITE_NAME = 'sign_in_with_google'
 
-DOMAIN = 'http://www.dannylocal.com:8000'
+#set your domain
+DOMAIN = ''
 
+
+#Get your keys at https://code.google.com/apis/console/
 GOOGLE_API_KEY = ''
 GOOGLE_CLIENT_ID = ''
 GOOGLE_CLIENT_SECRET = ''
