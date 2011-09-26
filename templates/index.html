@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Sign In With Google Sample</title>
+</head>
+
+
+<body>
+
+{% if request.user.is_authenticated %}
+<h2>You are signed in. <a href="{% url auth_logout %}">Logout</a></h2>
+
+<div><img src="{{ request.user.get_profile.image_url }}" width="100" /></div>
+
+<h3>Google Id: {{ request.user.get_profile.google_id }}</h3>
+<h3>About: {{ request.user.get_profile.about }}</h3>
+<h3>Location: {{ request.user.get_profile.location }}</h3>
+
+{% else %}
+<a href="{% url google_login %}"><img src="{{ MEDIA_URL }}images/login-with-google.png" border="0" /></a>
+{% endif %}
+
+</body>
+</html>
+
+
